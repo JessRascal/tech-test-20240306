@@ -4,7 +4,7 @@ defineProps({
     type: Array,
     required: true,
   },
-  dataName: {
+  label: {
     type: String,
     default: 'rows',
   },
@@ -24,10 +24,19 @@ defineProps({
       <tbody class="divide-y">
         <slot name="rows">
           <tr>
-            <td :colspan="columnHeaders.length" class="px-4 py-4 text-low italic">No {{ dataName }} to display</td>
+            <td :colspan="columnHeaders.length" class="px-4 py-4 text-low italic">
+              No {{ label }} to display
+            </td>
           </tr>
         </slot>
       </tbody>
     </table>
   </div>
 </template>
+
+<style lang="postcss" scoped>
+:deep(td) {
+  padding: 1rem;
+  background-color: #fff;
+}
+</style>

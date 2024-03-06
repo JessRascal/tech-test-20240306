@@ -6,6 +6,6 @@
 /*** custom base styles ***/
 @layer base {
   .page {
-    @apply grow p-4 md:p-8 bg-[#f9fafb];
+    @apply grow p-4 md:p-8 bg-[#f9fafb] text-medium;
   }
 }
