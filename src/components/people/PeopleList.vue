@@ -8,4 +8,4 @@
   <h2 class="text-secondary">Secondary text</h2>
 </template>
 
-<style scoped></style>
+<style lang="postcss" scoped></style>
