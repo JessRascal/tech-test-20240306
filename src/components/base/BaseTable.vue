@@ -57,7 +57,7 @@ const isSortColumn = (headerKey: string) => props.sortColumn === headerKey;
 
 <style lang="postcss" scoped>
 :deep(tr:not(thead > tr)) {
-  @apply bg-white hover:bg-primary-transparent;
+  @apply bg-white cursor-pointer hover:bg-primary-transparent;
 }
 :deep(td) {
   @apply px-4 py-3;

@@ -25,7 +25,7 @@ const store = useSidePanelStore();
       v-if="store.isOpen"
       class="fixed inset-0 md:ml-auto w-screen lg:w-1/2 xl:w-2/5 2xl:w-1/3 z-index-side-panel bg-white border overflow-y-auto"
     >
-      <div class="flex flex-col p-8">
+      <div class="flex flex-col gap-y-4 p-8">
         <suspense>
           <div>
             <component

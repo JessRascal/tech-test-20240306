@@ -6,7 +6,7 @@
 /*** custom base styles ***/
 @layer base {
   .page {
-    @apply grow flex flex-col gap-y-4 p-4 md:p-8 bg-[#f9fafb] text-medium;
+    @apply grow flex flex-col gap-y-4 p-4 md:px-8 bg-[#f9fafb] text-medium;
   }
 
   .input-field {
