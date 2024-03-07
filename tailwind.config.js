@@ -25,4 +25,13 @@ export default {
     },
   },
   plugins: [],
+  // load these classes so they can be used dynamically (not needed if used elsewhere)
+  // https://tailwindcss.com/docs/content-configuration#safelisting-classes
+  safelist: [
+    {
+      pattern:
+        /(bg)-(primary|secondary)/,
+      variants: ['hover'],
+    },
+  ],
 };
