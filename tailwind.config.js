@@ -10,6 +10,7 @@ export default {
         primary: {
           DEFAULT: 'rgb(119, 53, 255)',
           light: 'rgb(148, 141, 241)',
+          transparent: 'rgba(119, 53, 255, 0.05)',
         },
         secondary: {
           DEFAULT: 'rgb(253, 40, 74)',

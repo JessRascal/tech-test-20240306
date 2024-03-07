@@ -30,7 +30,7 @@ const isSortColumn = (headerKey: string) => props.sortColumn === headerKey;
 <template>
   <div class="border rounded overflow-hidden">
     <table class="table-fixed w-full text-xs md:text-sm text-left text-medium">
-      <thead class="text-medium uppercase bg-gray-200">
+      <thead class="uppercase bg-default">
         <tr>
           <TableHeaderPerson
             v-for="(header, index) in headers"
@@ -56,8 +56,10 @@ const isSortColumn = (headerKey: string) => props.sortColumn === headerKey;
 </template>
 
 <style lang="postcss" scoped>
+:deep(tr:not(thead > tr)) {
+  @apply bg-white hover:bg-primary-transparent;
+}
 :deep(td) {
-  padding: 1rem;
-  background-color: #fff;
+  @apply p-3;
 }
 </style>
