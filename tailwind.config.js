@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-import { gray } from 'tailwindcss/colors';
+import { amber, cyan, green, gray, red } from 'tailwindcss/colors';
 
 export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
@@ -15,6 +15,10 @@ export default {
         secondary: {
           DEFAULT: 'rgb(253, 40, 74)',
         },
+        success: green[600],
+        warning: amber[600],
+        danger: red[600],
+        info: cyan[600],
         default: gray[200],
         // for text colours
         high: gray[700],
@@ -30,7 +34,7 @@ export default {
   safelist: [
     {
       pattern:
-        /(bg)-(primary|secondary)/,
+        /(bg)-(primary|secondary|success|warning|danger|info|default)/,
       variants: ['hover'],
     },
   ],
