@@ -1,30 +1,51 @@
 <script setup lang="ts">
-defineProps({
-  columnHeaders: {
-    type: Array,
-    required: true,
-  },
+import { type PropType } from 'vue';
+
+import TableHeaderPerson from '@/components/people/TableHeaderPerson.vue';
+
+import type { TableHeader } from '@/models/TableHeader';
+
+const props = defineProps({
   label: {
     type: String,
     default: 'rows',
   },
+  headers: {
+    type: Array as PropType<TableHeader[]>,
+    required: true,
+  },
+  sortColumn: {
+    type: String,
+    required: true,
+  },
+  isSortDescending: {
+    type: Boolean,
+    required: true,
+  },
 });
+
+const isSortColumn = (headerKey: string) => props.sortColumn === headerKey;
 </script>
 
 <template>
   <div class="border rounded overflow-hidden">
-    <table class="table-auto w-full md:text-sm text-left text-medium">
+    <table class="table-fixed w-full text-xs md:text-sm text-left text-medium">
       <thead class="text-medium uppercase bg-gray-200">
         <tr>
-          <th v-for="(header, index) in columnHeaders" :key="index" class="px-4 py-2 font-medium">
-            {{ header }}
-          </th>
+          <TableHeaderPerson
+            v-for="(header, index) in headers"
+            :key="index"
+            :header="header"
+            :is-sort-active="isSortColumn(header.key)"
+            :is-sort-descending="isSortColumn(header.key) && isSortDescending"
+            @toggle-sort="$emit('toggle-sort', header.key)"
+          />
         </tr>
       </thead>
       <tbody class="divide-y">
         <slot name="rows">
           <tr>
-            <td :colspan="columnHeaders.length" class="px-4 py-4 text-low italic">
+            <td :colspan="headers.length" class="px-4 py-4 text-low italic">
               No {{ label }} to display
             </td>
           </tr>
