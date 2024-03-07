@@ -34,7 +34,7 @@ const iconComponent = computed(() => {
 
 const sortIconDynamicClasses = computed(() => {
   return {
-    'text-secondary': props.isSortActive,
+    'text-primary': props.isSortActive,
     'text-low': !props.isSortActive,
   };
 });
