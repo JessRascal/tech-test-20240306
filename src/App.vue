@@ -2,6 +2,7 @@
 import { RouterView } from 'vue-router';
 
 import NavBar from '@/components/nav/NavBar.vue';
+import SidePanel from '@/components/base/SidePanel.vue';
 </script>
 
 <template>
@@ -12,5 +13,6 @@ import NavBar from '@/components/nav/NavBar.vue';
     <Suspense>
       <RouterView />
     </Suspense>
+    <SidePanel />
   </div>
 </template>
