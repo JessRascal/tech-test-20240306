@@ -60,6 +60,6 @@ const isSortColumn = (headerKey: string) => props.sortColumn === headerKey;
   @apply bg-white hover:bg-primary-transparent;
 }
 :deep(td) {
-  @apply p-3;
+  @apply px-4 py-3;
 }
 </style>
