@@ -41,4 +41,5 @@ export const createAppError = (err: unknown, defaultCode: string = 'unknown'): A
 const ErrorMapping: Record<string, string> = {
   unknown: 'An unknown error occurred',
   'people/unable-to-get': 'Unable to get people',
+  'shifts/unable-to-get': 'Unable to get shifts',
 };

@@ -28,8 +28,8 @@ const paginatedPeople = computed(() => {
   return peopleStore.sortedAndFilteredPeople.slice(start, end);
 });
 
-// populate people in state
-await peopleStore.populatePeople();
+// populate initial data
+await peopleStore.fetchPeopleAndShifts();
 </script>
 
 <template>
