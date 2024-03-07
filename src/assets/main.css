@@ -6,6 +6,10 @@
 /*** custom base styles ***/
 @layer base {
   .page {
-    @apply grow p-4 md:p-8 bg-[#f9fafb];
+    @apply grow flex flex-col gap-y-4 p-4 md:p-8 bg-[#f9fafb] text-medium;
+  }
+
+  .input-field {
+    @apply appearance-none text-high border-2 border-default rounded p-2 leading-tight focus:border-primary-light focus:outline-none transition-colors duration-150 ease-in-out;
   }
 }

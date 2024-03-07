@@ -26,6 +26,6 @@ defineProps({
 
 <style lang="postcss" scoped>
 .router-link-active {
-  color: theme('colors.secondary');
+  color: theme('colors.primary.DEFAULT');
 }
 </style>
