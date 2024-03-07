@@ -11,9 +11,13 @@ export const usePeopleStore = defineStore('people', () => {
   const people = ref<Person[]>([]);
   const sortColumn = ref('name');
   const isSortDescending = ref(false);
+  const searchTerm = ref<string | undefined>(undefined);
 
-  const sortedPeople = computed(() => {
-    return [...people.value].sort((a, b) => {
+  const sortedAndFilteredPeople = computed(() => {
+    // filter first
+    const filtered = _filterPeopleBySearch();
+
+    return filtered.sort((a, b) => {
       const selectedKey = sortColumn.value;
 
       // make sure the sort column key exists before accessing it
@@ -83,6 +87,18 @@ export const usePeopleStore = defineStore('people', () => {
   };
 
   // PRIVATE FUNCTIONS
+  const _filterPeopleBySearch = (): Person[] => {
+    // EXIT if searchTerm not populated
+    if (!searchTerm.value) return people.value;
+
+    const term = searchTerm.value.toLowerCase();
+
+    return people.value.filter((person) => {
+      const name = person.name.toLowerCase();
+      return name.includes(term);
+    });
+  };
+
   const _handleError = async (err: unknown) => {
     console.log(`_handleError: `, err); // TODO: REMOVE
     // if (err instanceof AppError) {
@@ -93,7 +109,8 @@ export const usePeopleStore = defineStore('people', () => {
     isLoading,
     sortColumn,
     isSortDescending,
-    sortedPeople,
+    searchTerm,
+    sortedAndFilteredPeople,
     setSortColumn,
     populatePeople,
   };

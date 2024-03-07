@@ -20,12 +20,12 @@ const tableHeaders = ref<TableHeader[]>([
 const currentPage = ref(1);
 const itemsPerPage = ref(10);
 
-const totalPeople = computed(() => peopleStore.sortedPeople.length);
+const totalPeople = computed(() => peopleStore.sortedAndFilteredPeople.length);
 
 const paginatedPeople = computed(() => {
   const start = (currentPage.value - 1) * itemsPerPage.value;
   const end = start + itemsPerPage.value;
-  return peopleStore.sortedPeople.slice(start, end);
+  return peopleStore.sortedAndFilteredPeople.slice(start, end);
 });
 
 // populate people in state
