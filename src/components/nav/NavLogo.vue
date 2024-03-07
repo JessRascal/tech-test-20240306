@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import { RouterLink } from 'vue-router';
+</script>
+
 <template>
-  <img src="@/assets/logo.svg" />
+  <RouterLink to="/">
+    <img src="@/assets/logo.svg" />
+  </RouterLink>
 </template>
